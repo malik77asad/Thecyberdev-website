@@ -1,0 +1,6 @@
+{
+  "name": "TheCyberDev",
+  "description": "Modern cybersecurity, website development, and application development solutions for businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
