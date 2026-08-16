@@ -115,11 +115,11 @@ export const Contact: React.FC<ContactProps> = ({ initialService }) => {
                 </div>
                 <div className="flex items-center justify-between">
                   <a
-                    href="mailto:hello@thecyberdev.com"
+                    href="mailto:offensivedeveloper77@gmail.com"
                     className="text-base font-mono font-semibold text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-2"
                   >
                     <Mail className="w-4 h-4 text-cyan-400" />
-                    hello@thecyberdev.com
+                    offensivedeveloper77@gmail.com
                   </a>
                   <button
                     onClick={handleCopyEmail}
