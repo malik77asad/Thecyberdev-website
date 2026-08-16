@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Menu, X, ArrowRight, Lock, Code, Terminal } from 'lucide-react';
+import { Menu, X, ArrowRight, Lock, Code, Terminal } from 'lucide-react';
+import cyberdevLogo from '../../assets/cyberdev-logo.png';
 
 interface NavbarProps {
   onOpenGetStarted: () => void;
@@ -14,15 +15,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'about', 'services', 'why-us', 'projects', 'process', 'contact'];
+      const sections = [
+        'home',
+        'about',
+        'services',
+        'why-us',
+        'projects',
+        'process',
+        'contact',
+      ];
+
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
         const el = document.getElementById(section);
+
         if (el) {
           const top = el.offsetTop;
           const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
+
+          if (
+            scrollPosition >= top &&
+            scrollPosition < top + height
+          ) {
             setActiveSection(section);
             break;
           }
@@ -31,7 +46,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const navLinks = [
@@ -44,13 +62,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     e.preventDefault();
+
     setMobileMenuOpen(false);
+
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
+
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth',
+      });
     }
   };
 
@@ -59,36 +85,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
       id="main-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#020617]/90 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/40 py-3.5'
-          : 'bg-[#020617]/60 backdrop-blur-sm border-b border-white/5 py-4'
+          ? 'bg-[#020617]/90 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/40 py-3'
+          : 'bg-[#020617]/60 backdrop-blur-sm border-b border-white/5 py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          
-          {/* Logo & Brand Name */}
+
+          {/* Logo */}
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center gap-2.5 group focus:outline-none"
-            aria-label="TheCyberDev Home"
+            className="flex items-center group focus:outline-none"
+            aria-label="CyberDev Home"
           >
-            <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center shadow-md shadow-cyan-500/20 group-hover:bg-cyan-400 transition-colors">
-              <div className="w-4 h-4 border-2 border-slate-950 rotate-45 flex items-center justify-center">
-                <div className="w-1.5 h-1.5 bg-slate-950 rounded-full" />
-              </div>
-            </div>
-            <div>
-              <span className="text-xl font-bold tracking-tight text-white flex items-center">
-                TheCyber<span className="text-cyan-400">Dev</span>
-              </span>
-            </div>
+            <img
+              src={cyberdevLogo}
+              alt="CyberDev"
+              className="w-16 h-16 sm:w-[72px] sm:h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </a>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
+
               return (
                 <a
                   key={link.id}
@@ -106,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
             })}
           </nav>
 
-          {/* CTA & Actions */}
+          {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <button
               onClick={onOpenGetStarted}
@@ -117,23 +139,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
             </button>
           </div>
 
-          {/* Mobile Hamburger Toggle Button */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center gap-3 md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg bg-slate-900 border border-white/10 text-slate-300 hover:text-cyan-400 focus:outline-none"
-              aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+              aria-label={
+                mobileMenuOpen ? 'Close Menu' : 'Open Menu'
+              }
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
+
         </div>
       </div>
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-x-0 top-[64px] bg-[#020617]/98 border-b border-white/10 backdrop-blur-2xl px-6 py-6 shadow-2xl transition-all animate-fadeIn">
+
           <div className="flex flex-col space-y-3">
+
             {navLinks.map((link) => (
               <a
                 key={link.id}
@@ -146,11 +177,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
                 }`}
               >
                 <span>{link.label}</span>
-                {activeSection === link.id && <span className="w-2 h-2 rounded-full bg-cyan-400" />}
+
+                {activeSection === link.id && (
+                  <span className="w-2 h-2 rounded-full bg-cyan-400" />
+                )}
               </a>
             ))}
 
+            {/* Mobile CTA */}
             <div className="pt-4 border-t border-white/10 space-y-3">
+
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
@@ -162,14 +198,31 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
                 <ArrowRight className="w-4 h-4" />
               </button>
 
+              {/* Mobile Features */}
               <div className="flex items-center justify-center gap-4 text-xs font-mono text-slate-400 pt-2">
-                <span className="flex items-center gap-1"><Lock className="w-3 h-3 text-cyan-400" /> Secure</span>
+
+                <span className="flex items-center gap-1">
+                  <Lock className="w-3 h-3 text-cyan-400" />
+                  Secure
+                </span>
+
                 <span>&bull;</span>
-                <span className="flex items-center gap-1"><Code className="w-3 h-3 text-emerald-400" /> Scalable</span>
+
+                <span className="flex items-center gap-1">
+                  <Code className="w-3 h-3 text-emerald-400" />
+                  Scalable
+                </span>
+
                 <span>&bull;</span>
-                <span className="flex items-center gap-1"><Terminal className="w-3 h-3 text-blue-400" /> Modern</span>
+
+                <span className="flex items-center gap-1">
+                  <Terminal className="w-3 h-3 text-blue-400" />
+                  Modern
+                </span>
+
               </div>
             </div>
+
           </div>
         </div>
       )}
