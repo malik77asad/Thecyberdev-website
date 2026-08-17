@@ -107,66 +107,7 @@ export const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Technology-themed Visual & Matrix */}
-          <div className="lg:col-span-5 space-y-6">
-            
-            {/* Architecture Card */}
-            <div className="p-6 rounded-2xl bg-[#0f172a] border border-white/10 shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
-              
-              <div className="flex items-center justify-between pb-4 border-b border-white/5 text-xs font-mono">
-                <span className="text-slate-400 flex items-center gap-1.5 font-semibold">
-                  <Activity className="w-3.5 h-3.5 text-cyan-400" />
-                  SYSTEM INTEGRITY MATRIX
-                </span>
-                <span className="text-emerald-400 font-semibold">100% OPERATIONAL</span>
-              </div>
-
-              {/* Matrix Metrics */}
-              <div className="py-5 space-y-4">
-                <div className="space-y-1.5 font-mono text-xs">
-                  <div className="flex justify-between text-slate-300">
-                    <span>Defensive Security Posture</span>
-                    <span className="text-cyan-400">99.9%</span>
-                  </div>
-                  <div className="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-white/5">
-                    <div className="bg-gradient-to-r from-cyan-500 to-teal-400 h-full w-[99.9%]" />
-                  </div>
-                </div>
-
-                <div className="space-y-1.5 font-mono text-xs">
-                  <div className="flex justify-between text-slate-300">
-                    <span>Web Architecture & Speed (Lighthouse)</span>
-                    <span className="text-emerald-400">100/100</span>
-                  </div>
-                  <div className="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-white/5">
-                    <div className="bg-gradient-to-r from-emerald-500 to-cyan-400 h-full w-full" />
-                  </div>
-                </div>
-
-                <div className="space-y-1.5 font-mono text-xs">
-                  <div className="flex justify-between text-slate-300">
-                    <span>Mobile App Performance & Stability</span>
-                    <span className="text-blue-400">99.8%</span>
-                  </div>
-                  <div className="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-white/5">
-                    <div className="bg-gradient-to-r from-blue-500 to-indigo-400 h-full w-[99.8%]" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Zero-Trust Badge */}
-              <div className="p-3.5 rounded-xl bg-slate-950/80 border border-white/5 flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-500/30">
-                  <Lock className="w-4 h-4" />
-                </div>
-                <div className="text-xs">
-                  <div className="text-white font-bold">Zero-Trust Framework</div>
-                  <div className="text-slate-400 text-[11px]">Strict verification for every API endpoint and user interaction.</div>
-                </div>
-              </div>
-            </div>
-
+        
             {/* Quick stats mini-grid */}
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 rounded-xl bg-slate-900/50 border border-white/5 text-center font-mono">
@@ -182,8 +123,6 @@ export const About: React.FC = () => {
           </div>
 
         </div>
-
-      </div>
     </section>
   );
 };

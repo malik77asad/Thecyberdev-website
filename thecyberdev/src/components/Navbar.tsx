@@ -102,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
             <img
               src={cyberdevLogo}
               alt="CyberDev"
-              className="w-16 h-16 sm:w-[72px] sm:h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-11 w-auto max-w-[190px] object-contain transition-transform duration-300 group-hover:scale-105 sm:h-14 sm:max-w-[260px]"
             />
           </a>
 
