@@ -9,14 +9,10 @@ import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Services } from './components/Services';
 import { WhyUs } from './components/WhyUs';
-import { Projects } from './components/Projects';
-import { Process } from './components/Process';
 import { TechStack } from './components/TechStack';
-import { ProjectScopeEstimator } from './components/ProjectScopeEstimator';
 import { CallToAction } from './components/CallToAction';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { ProjectModal } from './components/ProjectModal';
 import { ServiceModal } from './components/ServiceModal';
 import { ProjectItem, ServiceItem } from './types';
 
@@ -101,21 +97,9 @@ export default function App() {
         {/* 4. Why Choose Us */}
         <WhyUs />
 
-        {/* 5. Projects / Portfolio Showcase */}
-        <Projects
-          onSelectProject={(project) => setActiveProjectModal(project)}
-        />
-
-        {/* 6. Process Timeline */}
-        <Process />
-
+        
         {/* 7. Modern Tech Stack & Security Frameworks */}
         <TechStack />
-
-        {/* 8. Interactive Project Scoping Tool */}
-        <ProjectScopeEstimator
-          onApplyScopeToContact={handleApplyScopeToContact}
-        />
 
         {/* 9. High-Impact Call To Action */}
         <CallToAction onStartProject={scrollToContact} />
@@ -126,14 +110,6 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
-
-      {/* Detail Modals */}
-      <ProjectModal
-        project={activeProjectModal}
-        onClose={() => setActiveProjectModal(null)}
-        onSelectProjectForContact={handleSelectProjectForContact}
-      />
-
       <ServiceModal
         service={activeServiceModal}
         onClose={() => setActiveServiceModal(null)}
