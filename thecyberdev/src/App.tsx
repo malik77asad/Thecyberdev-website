@@ -14,10 +14,9 @@ import { CallToAction } from './components/CallToAction';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ServiceModal } from './components/ServiceModal';
-import { ProjectItem, ServiceItem } from './types';
+import { ServiceItem } from './types';
 
 export default function App() {
-  const [activeProjectModal, setActiveProjectModal] = useState<ProjectItem | null>(null);
   const [activeServiceModal, setActiveServiceModal] = useState<ServiceItem | null>(null);
   const [selectedServiceForContact, setSelectedServiceForContact] = useState<string>('cybersecurity');
 
@@ -38,29 +37,6 @@ export default function App() {
   const handleSelectService = (service: ServiceItem) => {
     setSelectedServiceForContact(service.category);
     scrollToContact();
-  };
-
-  const handleSelectProjectForContact = (projectTitle: string) => {
-    scrollToContact();
-    setTimeout(() => {
-      const textarea = document.getElementById('contact-message') as HTMLTextAreaElement;
-      if (textarea) {
-        textarea.value = `I am interested in a solution similar to your project: "${projectTitle}". Here are our specifications:\n`;
-        textarea.focus();
-      }
-    }, 400);
-  };
-
-  const handleApplyScopeToContact = (scopeSummary: string, serviceKey: string) => {
-    setSelectedServiceForContact(serviceKey);
-    scrollToContact();
-    setTimeout(() => {
-      const textarea = document.getElementById('contact-message') as HTMLTextAreaElement;
-      if (textarea) {
-        textarea.value = `${scopeSummary}\n\nAdditional notes:\n`;
-        textarea.focus();
-      }
-    }, 400);
   };
 
   return (

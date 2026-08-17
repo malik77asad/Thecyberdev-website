@@ -11,8 +11,6 @@ export const Footer: React.FC = () => {
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
     { label: 'Why Us', href: '#why-us' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Process', href: '#process' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -77,7 +75,7 @@ export const Footer: React.FC = () => {
               </a>
 
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/thecyberdev.pk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-[#0f172a] border border-white/10 hover:border-cyan-500/40 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors"

@@ -20,8 +20,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
         'about',
         'services',
         'why-us',
-        'projects',
-        'process',
         'contact',
       ];
 
@@ -57,8 +55,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenGetStarted }) => {
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Services', href: '#services', id: 'services' },
     { label: 'Why Us', href: '#why-us', id: 'why-us' },
-    { label: 'Projects', href: '#projects', id: 'projects' },
-    { label: 'Process', href: '#process', id: 'process' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 

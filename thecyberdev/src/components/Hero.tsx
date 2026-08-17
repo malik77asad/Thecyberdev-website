@@ -68,10 +68,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGetStarted, onExploreServices 
                 <div className="text-2xl sm:text-3xl font-bold text-white font-mono">256-bit</div>
                 <div className="text-xs uppercase text-slate-500 tracking-wider font-semibold mt-1">Encryption Std</div>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-bold text-white font-mono">24/7</div>
-                <div className="text-xs uppercase text-slate-500 tracking-wider font-semibold mt-1">Expert Support</div>
-              </div>
             </div>
 
           </div>

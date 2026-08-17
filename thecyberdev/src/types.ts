@@ -13,28 +13,6 @@ export interface ServiceItem {
   accentColor: string;
 }
 
-export interface ProjectItem {
-  id: string;
-  title: string;
-  category: 'Cybersecurity' | 'Web Development' | 'App Development';
-  categoryKey: 'all' | 'cybersecurity' | 'web-dev' | 'app-dev';
-  shortDesc: string;
-  clientType: string;
-  challenge: string;
-  solution: string;
-  keyMetrics: string[];
-  tags: string[];
-  visualType: 'cyber-platform' | 'business-web' | 'mobile-app' | 'security-vault' | 'ecommerce-web' | 'fintech-app';
-}
-
-export interface ProcessStep {
-  number: string;
-  title: string;
-  description: string;
-  activities: string[];
-  duration: string;
-}
-
 export interface WhyUsFeature {
   title: string;
   description: string;
