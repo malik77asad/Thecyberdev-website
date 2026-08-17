@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Cpu, CheckCircle2, Briefcase, TrendingUp, Lock, Terminal, Activity, Award } from 'lucide-react';
+import { ShieldCheck, Cpu, CheckCircle2, Briefcase, TrendingUp, Terminal, Award } from 'lucide-react';
 
 export const About: React.FC = () => {
   const highlights = [
@@ -61,68 +61,49 @@ export const About: React.FC = () => {
           </p>
         </div>
 
-        {/* Two-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          {/* Left Column: Mission & 5 Qualities */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-white/10 relative overflow-hidden shadow-xl">
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-cyan-400 to-blue-500" />
-              <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <Award className="w-5 h-5 text-cyan-400" />
-                Our Core Mission
-              </h3>
-              <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                Our goal is to help businesses establish a strong digital presence while keeping their websites, applications, and digital systems secure. We eliminate the friction between security compliance and rapid digital innovation.
-              </p>
-            </div>
+        {/* Mission & Qualities */}
+        <div className="max-w-5xl mx-auto space-y-6">
+          <div className="p-6 rounded-2xl bg-slate-900/50 border border-white/10 relative overflow-hidden shadow-xl">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-cyan-400 to-blue-500" />
+            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
+              <Award className="w-5 h-5 text-cyan-400" />
+              Our Core Mission
+            </h3>
+            <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+              Our goal is to help businesses establish a strong digital presence while keeping their websites, applications, and digital systems secure. We eliminate the friction between security compliance and rapid digital innovation.
+            </p>
+          </div>
 
-            {/* 5 Highlighted Qualities */}
-            <div className="space-y-3">
-              <div className="text-xs font-mono text-slate-500 uppercase tracking-wider font-semibold">
-                Engineered for Excellence:
-              </div>
-              
-              {highlights.map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="p-4 rounded-xl bg-slate-900/40 hover:bg-slate-900/70 border border-white/5 hover:border-white/10 transition-all flex items-start gap-4 group"
-                  >
-                    <div className={`p-2.5 rounded-lg border ${item.bg} ${item.color} shrink-0 group-hover:scale-105 transition-transform`}>
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <div className="space-y-0.5">
-                      <h4 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs text-slate-400 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
+          {/* 5 Highlighted Qualities */}
+          <div className="space-y-3">
+            <div className="text-xs font-mono text-slate-500 uppercase tracking-wider font-semibold">
+              Engineered for Excellence:
+            </div>
+            
+            {highlights.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-4 rounded-xl bg-slate-900/40 hover:bg-slate-900/70 border border-white/5 hover:border-white/10 transition-all flex items-start gap-4 group"
+                >
+                  <div className={`p-2.5 rounded-lg border ${item.bg} ${item.color} shrink-0 group-hover:scale-105 transition-transform`}>
+                    <Icon className="w-4 h-4" />
                   </div>
-                );
-              })}
-            </div>
+                  <div className="space-y-0.5">
+                    <h4 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-slate-400 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-
-        
-            {/* Quick stats mini-grid */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-slate-900/50 border border-white/5 text-center font-mono">
-                <div className="text-2xl font-bold text-cyan-400">24/7</div>
-                <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-semibold">Reliable Systems</div>
-              </div>
-              <div className="p-4 rounded-xl bg-slate-900/50 border border-white/5 text-center font-mono">
-                <div className="text-2xl font-bold text-emerald-400">0-Day</div>
-                <div className="text-xs text-slate-500 mt-1 uppercase tracking-wider font-semibold">Defensive Standards</div>
-              </div>
-            </div>
-
-          </div>
-
         </div>
+      </div>
     </section>
   );
 };

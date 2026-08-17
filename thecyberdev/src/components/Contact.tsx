@@ -109,21 +109,21 @@ export const Contact: React.FC<ContactProps> = ({ initialService }) => {
               </p>
 
               {/* Direct email card */}
-              <div className="p-4 rounded-xl bg-slate-950 border border-white/5 space-y-2">
+              <div className="p-4 rounded-xl bg-slate-950 border border-white/5 space-y-2 overflow-hidden">
                 <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-semibold">
                   Official Email
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3 min-w-0">
                   <a
                     href="mailto:offensivedeveloper77@gmail.com"
-                    className="text-base font-mono font-semibold text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-2"
+                    className="min-w-0 flex-1 text-sm sm:text-base font-mono font-semibold text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-2"
                   >
-                    <Mail className="w-4 h-4 text-cyan-400" />
-                    offensivedeveloper77@gmail.com
+                    <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span className="min-w-0 break-all leading-relaxed">offensivedeveloper77@gmail.com</span>
                   </a>
                   <button
                     onClick={handleCopyEmail}
-                    className="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer border border-white/5"
+                    className="shrink-0 p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer border border-white/5"
                     title="Copy Email"
                     aria-label="Copy Email address"
                   >
@@ -187,7 +187,7 @@ export const Contact: React.FC<ContactProps> = ({ initialService }) => {
                       Message Received!
                     </h3>
                     <p className="text-slate-300 text-sm leading-relaxed">
-                      Thank you for contacting <strong className="text-cyan-400">TheCyberDev</strong>. Our technical team is reviewing your requirements and will reply to <span className="font-mono text-cyan-300">{formData.email}</span> within 12 hours.
+                      Thank you for contacting <strong className="text-cyan-400">TheCyberDev</strong>. Our technical team is reviewing your requirements and will reply to <span className="font-mono text-cyan-300 break-all">{formData.email}</span> within 12 hours.
                     </p>
                   </div>
 
